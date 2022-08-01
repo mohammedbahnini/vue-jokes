@@ -19,6 +19,9 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+[v-cloak] {
+  display: none;
+}
 
 .joke {
   background-color: rgb(214, 197, 240);

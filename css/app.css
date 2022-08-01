@@ -22,6 +22,10 @@ body {
   padding: 0 1.5rem;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .joke {
   background-color: rgb(214, 197, 240);
   padding: 2rem 3rem;
