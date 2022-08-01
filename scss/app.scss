@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(27, 0, 68);
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  max-width: calc(1440px + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.joke {
+  background-color: rgb(214, 197, 240);
+  padding: 2rem 3rem;
+  border-radius: 0.75rem;
+  transition: 0.2s linear;
+  max-width: 600px;
+  &__title {
+    color: rgba(black, 0.4);
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  &__text {
+    color: rgba(black, 0.7);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    @media screen and (max-width: 576px) {
+      font-size: 1.125rem;
+    }
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(145, 83, 244);
+    cursor: pointer;
+    @media screen and (max-width: 576px) {
+      font-size: 1.2rem;
+    }
+  }
+  .loader {
+    display: none;
+  }
+  &.loading {
+    .loader {
+      display: block;
+    }
+    .joke__text p {
+      display: none !important;
+    }
+  }
+  .loader i {
+    font-size: 3rem;
+    transform-origin: center;
+    animation: spin 2s linear infinite;
+    @keyframes spin {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+}
